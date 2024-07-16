@@ -1,0 +1,239 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$paavai_org-primary: mat.define-palette(mat.$indigo-palette);
+$paavai_org-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$paavai_org-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$paavai_org-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $paavai_org-primary,
+      accent: $paavai_org-accent,
+      warn: $paavai_org-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($paavai_org-theme);
+
+$PAAVAI-Primary: (
+  50: #f3e4ed,
+  100: #e2bcd1,
+  200: #cf90b3,
+  300: #bb6494,
+  400: #ad427d,
+  500: #9e2166,
+  600: #961d5e,
+  700: #8c1853,
+  800: #821449,
+  900: #700b38,
+  A100: #ffa2c6,
+  A200: #ff6fa7,
+  A400: #ff3c88,
+  A700: #ff2378,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+$PAAVAI-Secondary: (
+  50: #fffefc,
+  100: #fefcf8,
+  200: #fefbf3,
+  300: #fef9ee,
+  400: #fdf7eb,
+  500: #fdf6e7,
+  600: #fdf5e4,
+  700: #fcf3e0,
+  800: #fcf2dd,
+  900: #fcefd7,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffffff,
+  A700: #ffffff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+@include mat.core();
+
+@font-face {
+  font-family: "inter";
+  src: url(./assets/fonts/Inter.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "LibreCaslon";
+  src: url(./assets/fonts/LibreCaslon.ttf) format("truetype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$paavai-foundation-primary: mat.define-palette($PAAVAI-Primary);
+$paavai-foundation-accent: mat.define-palette($PAAVAI-Secondary);
+$paavai-foundation-warn: mat.define-palette(mat.$red-palette);
+$paavai-foundation-success: mat.define-palette(mat.$teal-palette);
+
+$paavai-foundation-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $paavai-foundation-primary,
+      accent: $paavai-foundation-accent,
+      warn: $paavai-foundation-warn,
+      success: $paavai-foundation-success,
+    ),
+  )
+);
+
+@include mat.all-component-themes($paavai-foundation-theme);
+
+$primary: mat.get-color-from-palette($PAAVAI-Primary, 500);
+$accent: mat.get-color-from-palette($PAAVAI-Secondary, 500);
+
+html,
+body {
+  // height: 100%;
+  overflow-x: hidden;
+  background-color: #fdf6e7;
+}
+body {
+  margin: 0;
+  font-family: "inter";
+}
+
+.long-width {
+  max-width: 1440px;
+}
+
+.content-width {
+  max-width: 1200px;
+}
+
+.background-primary {
+  background-color: #fdf6e7;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// font-colors
+
+.white {
+  color: #fff;
+}
+
+.purple {
+  color: #9e2065;
+  font-family: "inter";
+}
+
+// font-weights
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+.fw-400 {
+  font-weight: 400;
+}
+
+// font-sizes
+.f-18 {
+  font-size: clamp(10px, 2vw, 18px);
+}
+.f-20 {
+  font-size: clamp(12px, 2vw, 20px);
+}
+.f-22 {
+  font-size: clamp(10px, 2vw, 17.6px);
+}
+.f-24 {
+  font-size: clamp(14px, 2vw, 24px);
+}
+.f-40 {
+  font-size: clamp(20px, 2vw, 40px);
+}
+.f-48 {
+  font-size: clamp(18px, 2vw, 48px);
+}
+.f-30 {
+  font-size: clamp(24px, 2vw, 30px);
+}
+.f-36 {
+  font-size: clamp(15px, 2vw, 36px);
+}
+
+.f-25 {
+  font-size: clamp(16px, 2vw, 24px);
+}
+.f-32 {
+  font-size: clamp(16px, 2vw, 32px);
+}
+
+/* Line-height */
+.lh-54 {
+  line-height: 250%;
+}
+
+.lh-34 {
+  line-height: 200%;
+}
+
+.justify {
+  text-align: justify;
+}
