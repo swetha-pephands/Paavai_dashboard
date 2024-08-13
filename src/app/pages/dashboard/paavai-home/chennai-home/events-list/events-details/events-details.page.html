@@ -1,0 +1,18 @@
+<!-- src/app/events-details/events-details.page.html -->
+<app-page-header [title]="'Event List'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary">Paavai Foundation - Event Details</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let image of images" class="ion-text-center">
+        <ion-card>
+          <img [src]="image.src" [alt]="image.alt" class="event-image">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

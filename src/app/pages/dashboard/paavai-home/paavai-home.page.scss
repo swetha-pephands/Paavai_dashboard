@@ -1,0 +1,26 @@
+ion-content {
+    --background: #fdf6e7;
+  }
+
+  .rounded-img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    object-fit: cover; /* Cover the container without losing aspect ratio */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+
+  }
+  .activity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: pointer;
+  }
+  .centered-text {
+    text-align: center; /* Center align the text */
+    font-size: 1.3rem; /* Adjust the font size */
+    color: #9e2065; /* Text color */
+    margin-top: 10px; /* Space between image and text */
+  }

@@ -1,0 +1,23 @@
+<app-page-header [title]="'Paavai Home'"></app-page-header>
+
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary">Paavai Foundation Home For Girls Facility
+    </h1>
+  </div>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
+    <!-- Loop through each activity -->
+    <ion-col size="12" size-md="6" size-lg="3" *ngFor="let activity of home" class="ion-justify-content-center ion-align-items-center">
+      <div class="activity-container"  [routerLink]="activity.url">
+        <!-- Image with rounded corners and shadow -->
+        <img [src]="activity.imgUrl" alt="Activity Image" class="rounded-img">
+        <!-- Centered text below the image -->
+        <h2 class="centered-text">{{ activity.competition }}</h2>
+      </div>
+    </ion-col>
+  </ion-row>
+  </ion-content>

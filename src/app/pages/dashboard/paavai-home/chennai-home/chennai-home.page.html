@@ -1,0 +1,58 @@
+<app-page-header [title]="'Chennai Home'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary ">Paavai Foundation Home For Girls - Chennai</h1>
+  </div>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
+    <ion-col size="12" size-md="6" size-lg="9" class="ion-justify-content-center ion-align-items-center">
+      <ion-img src="../../../../../assets/images/home-banner.png"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
+        <!-- Loop through each activity -->
+        <ng-container *ngFor="let page of details">
+          <ion-col size="12" size-md="6" size-lg="8">
+            <ion-item>
+              <ion-icon slot="start" [name]="page.icon" color="primary"></ion-icon>
+              <ion-label>
+                <h3><b>{{ page.title }}</b> &nbsp; {{ page.answer }}</h3>
+              </ion-label>
+              <!-- Conditionally show the button -->
+              <ng-container *ngIf="page.title === 'Inmates Count:' || page.title === 'Staff Count:'">
+                <ion-button [routerLink]="page.url">{{ page.btn }}</ion-button>
+              </ng-container>
+            </ion-item>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+ <ion-content>
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex">
+    <div *ngFor="let icon of details_card;">
+      <ion-col size="12" size-md="6">
+        <ion-card [routerLink]="icon.url" class="ion-justify-content-start ion-align-items-center card-nav">
+          <ion-card-content>
+            <ion-img src="{{icon.imgUrl}}" class="card-icon ion-margin-top"></ion-img>
+          </ion-card-content>
+          <ion-card-title>{{icon.title}}</ion-card-title>
+          <ion-button class="detail-button" fill="clear">{{icon.btn}}</ion-button>
+          <div class="badge">
+            <ion-icon size="small" name="arrow-forward-outline"></ion-icon>
+          </div>
+        </ion-card>
+      </ion-col>
+    </div>
+  </ion-row>
+  
+  
+          </ion-content>
+
+
+</ion-content>

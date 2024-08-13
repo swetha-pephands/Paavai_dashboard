@@ -1,0 +1,36 @@
+ion-content {
+    --background: #fdf6e7;
+  }
+
+ 
+ion-card {
+   
+  
+    ion-card-title {
+      // font-family: Maven Pro !important;
+      font-size: 12px;
+      font-weight: 600;
+  text-align: center;
+      
+      color: #9e2065;
+    }
+}
+  
+  .card-nav {
+    width: 150px;
+    height: 170px;
+    position: relative;
+    border-radius: 10px;
+    
+  }
+  
+  
+  ion-card:hover {
+   cursor: pointer;
+  }
+  ion-fab-button {
+    --background: var(--ion-color-primary); /* Set background color */
+  }
+  ion-icon{
+    color: white;
+  }

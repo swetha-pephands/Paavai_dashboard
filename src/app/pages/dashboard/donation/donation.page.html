@@ -1,0 +1,38 @@
+<app-page-header [title]="'Donation'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center">
+    <h1 class="primary">Donation</h1>
+  </div>
+  <div class="table-container">
+    <ion-grid>
+      <!-- Table Header -->
+      <ion-row class="table-header">
+        <ion-col size="3" size-md="3"><strong>Name</strong></ion-col>
+        <ion-col size="3" size-md="3"><strong>Phone No</strong></ion-col>
+        <ion-col size="3" size-md="3"><strong>Amount</strong></ion-col>
+        <ion-col size="3" size-md="3"><strong>Date</strong></ion-col>
+      </ion-row>
+
+      <!-- Table Rows -->
+      <ion-row *ngFor="let item of paginatedItems" class="table-row">
+        <ion-col size="3" size-md="3" class="table-cell">{{ item.name }}</ion-col>
+        <ion-col size="3" size-md="3" class="table-cell">{{ item.phoneNumber }}</ion-col>
+        <ion-col size="3" size-md="3" class="table-cell">₹{{ item.amount }}</ion-col>
+        <ion-col size="3" size-md="3" class="table-cell">{{ item.date | date }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Pagination Controls -->
+  <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-col size="auto">
+      <ion-button *ngFor="let page of totalPages"
+                  (click)="setPage(page)"
+                  [color]="page === currentPage ? 'primary' : 'medium'"
+                  class="pagination-button">
+        {{ page }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

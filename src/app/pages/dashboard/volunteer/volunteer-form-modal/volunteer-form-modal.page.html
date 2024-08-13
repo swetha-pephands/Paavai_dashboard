@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Information</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">First Name</ion-label>
+      <ion-input placeholder="Enter First Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Last Name</ion-label>
+      <ion-input placeholder="Enter Last Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone No</ion-label>
+      <ion-textarea placeholder="Enter Phone No"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-textarea placeholder="Enter Email"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Location</ion-label>
+      <ion-input type="text" placeholder="Enter Location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">DOB</ion-label>
+      <ion-input type="date" placeholder="Enter DOB"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="block" color="primary" class="custom-button" (click)="save()">Save</ion-button>
+</ion-content>

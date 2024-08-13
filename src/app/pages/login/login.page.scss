@@ -1,0 +1,55 @@
+ion-content {
+  --background: #fdf6e7; /* Set the background color to purple */
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-image {
+  margin-bottom: 20px; /* Adjust as needed */
+  width: 300px;
+}
+
+
+
+.heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #9e2065;
+}
+
+.input-box {
+  margin-top: 15px;
+}
+ion-item {
+  border-radius: 8px; /* Rounded corners for ion-item */
+}
+
+ion-input {
+  border-radius: 8px; /* Rounded corners for ion-input */
+  --padding-start: 10px; /* Adjust left padding */
+  --padding-end: 10px; /* Adjust right padding */
+}
+
+ion-button {
+  --background: #9e2065; /* Purple background color */
+  --color: white; /* Text color */
+  margin-top: 20px; /* Adjust top margin as needed */
+}
+.password-toggle-icon {
+  cursor: pointer;
+}
+.login-box {
+  width: 100%;
+  max-width: 500px; /* Increase the max-width to your desired value */
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

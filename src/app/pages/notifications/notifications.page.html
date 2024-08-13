@@ -1,0 +1,21 @@
+<app-page-header [title]="'Notifications'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center">
+    <h1 class="primary">Notifications</h1>
+    <ion-icon name="close" class="close-icon" (click)="closePage()"></ion-icon>
+
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let message of messages" [ngClass]="{'unread': !message.read}">
+      <ion-label>
+        {{ message.text }}
+      </ion-label>
+      <ion-button *ngIf="!message.read" (click)="markAsRead(message.id)">
+        Mark as Read
+      </ion-button>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

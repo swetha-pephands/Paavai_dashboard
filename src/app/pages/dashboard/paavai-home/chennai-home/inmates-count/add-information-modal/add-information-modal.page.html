@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Information</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input placeholder="Enter Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Father's Name</ion-label>
+      <ion-input placeholder="Enter Father's Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Mother's Name</ion-label>
+      <ion-input placeholder="Enter Mother's Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">DOB</ion-label>
+      <ion-input type="date" placeholder="Enter DOB"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-textarea placeholder="Enter Address"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Home Location</ion-label>
+      <ion-input type="text" placeholder="Enter Home Location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">age</ion-label>
+      <ion-input type="number" placeholder="Enter age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Join Date</ion-label>
+      <ion-input type="date" placeholder="Enter Join Date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Releving Date</ion-label>
+      <ion-input type="date" placeholder="Enter Releving Date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Education Name</ion-label>
+      <ion-input type="text" placeholder="Enter Education"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Institution Name</ion-label>
+      <ion-input type="text" placeholder="Enter Institution"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Intrest</ion-label>
+      <ion-input type="text" placeholder="Enter Intrest"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Achivement</ion-label>
+      <ion-input type="text" placeholder="Enter Achivement"></ion-input>
+    </ion-item>
+
+   
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="save()">Save</ion-button>
+</ion-content>

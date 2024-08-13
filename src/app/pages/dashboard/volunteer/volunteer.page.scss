@@ -1,0 +1,52 @@
+ion-content {
+  --background: #fdf6e7;
+  /* Set the background color to purple */
+}
+
+
+ion-card {
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  ion-card-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  
+  ion-card-subtitle {
+    color: #888;
+  }
+  
+  ion-footer {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  ion-toolbar {
+    --ion-background-color: #fff;
+  }
+  
+  ion-button {
+    margin: 0 5px;
+  }
+  
+  ion-card:hover{
+    cursor: pointer;
+  }
+  ion-icon{
+    color: white;
+  }

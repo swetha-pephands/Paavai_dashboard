@@ -1,0 +1,71 @@
+ion-grid {
+ 
+  margin: 10px;
+}
+
+.table-container {
+  overflow: hidden; /* Ensures borders don't break due to overflow */
+}
+
+.table-header,
+.table-row {
+  display: flex;
+  border-bottom: 1px solid #ddd; /* Border between rows */
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.table-header {
+  background-color: #9e2065;
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.table-header ion-col {
+  border-right: 1px solid #ddd; /* Border between header columns */
+}
+
+.table-row {
+  padding: 10px 0;
+}
+
+.table-cell {
+  border-right: 1px solid #ddd; /* Border between columns */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.table-cell:last-child {
+  border-right: none; /* Remove right border from last cell */
+}
+.table-header ion-col:last-child{
+  border-right: none; /* Remove right border from last cell */
+
+}
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+ion-content {
+  --background: #fdf6e7;
+}
+
+  
+  @media (max-width: 767px) {
+    .table-header, .table-row {
+      flex-direction: row;
+    }
+  
+    ion-col {
+      justify-content: flex-start;
+    }
+
+   
+  }
+  

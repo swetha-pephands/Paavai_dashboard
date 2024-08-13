@@ -1,0 +1,50 @@
+
+
+.card-icon {
+  width: 65px;
+  height: 65px;
+}
+
+.card-nav {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 10px;
+
+}
+
+ion-content {
+  --background: #fdf6e7;
+  /* Set the background color to purple */
+}
+
+
+
+ion-card {
+  ion-card-content {
+    // font-family: Maven Pro !important;
+    font-size: 10px;
+    font-weight: 400;
+    // line-height: 11.75px;
+    letter-spacing: -0.01em;
+    margin: 8px 10px 10px 10px;
+    padding: 0px;
+    color: #333;
+  }
+
+  ion-card-title {
+    // font-family: Maven Pro !important;
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: -0.01em;
+    margin: 0 10px 0 10px;
+    padding: 0px;
+    color: #9e2065;
+  }
+}
+
+ion-card:hover {
+  transform: scale(1.1);
+
+}

@@ -1,0 +1,34 @@
+<app-page-header [title]="'User Profile'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center">
+    <h1 class="primary">User Profile</h1>
+  </div>
+  <ion-content class="ion-padding">
+    <form (ngSubmit)="saveProfile()">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input [(ngModel)]="profile.name" name="name" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="profile.email" name="email" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="tel" [(ngModel)]="profile.phone" name="phone"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input [(ngModel)]="profile.address" name="address"></ion-input>
+      </ion-item>
+  
+      <ion-button expand="block" type="submit" color="primary" class="ion-margin-top">
+        Save Profile
+      </ion-button>
+    </form>
+  </ion-content>
+  </ion-content>

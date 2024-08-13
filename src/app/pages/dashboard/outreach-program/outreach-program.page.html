@@ -1,0 +1,23 @@
+<app-page-header [title]="'Outreach Program'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center">
+    <h1 class="primary">Outreach Program</h1>
+  </div>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex">
+    <div *ngFor="let card of programs;">
+      <ion-col size="12" size-md="6">
+        <ion-card [routerLink]="card.url" class="ion-justify-content-start ion-align-items-center card-nav">
+          <ion-card-content>
+            <ion-img src="{{card.imgUrl}}" class="card-icon ion-margin-top"></ion-img>
+          </ion-card-content>
+          <ion-card-title>{{card.title}}</ion-card-title>
+          <div class="badge">
+            <ion-icon size="small" name="arrow-forward-outline"></ion-icon>
+          </div>
+        </ion-card>
+      </ion-col>
+    </div>
+  </ion-row>
+  </ion-content>

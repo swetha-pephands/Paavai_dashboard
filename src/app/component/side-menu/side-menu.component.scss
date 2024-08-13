@@ -1,0 +1,37 @@
+
+  
+  ion-list {
+    --background: var(--ion-color-secondary);
+  }
+  ion-icon{
+    color: #9e2065;
+  }
+  ion-item:hover{ 
+         cursor: pointer;
+  }
+  .logo-image{
+    width: 250px;
+  }
+.icon{
+  color: #9e2065 !important;
+
+}
+  ion-item:hover ion-icon {
+    color: #fdf6e7;
+  }
+  
+  .logo-image {
+    width: 250px;
+  }
+  
+  .menu-item {
+    &:hover {
+      ion-label,
+      ion-icon {
+        color: #fdf6e7; /* Text color on hover */
+      }
+      --background: #9e2065; /* Indicator background color on hover */
+    }
+    
+    --indicator-color: #fdf6e7;
+  }

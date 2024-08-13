@@ -1,0 +1,22 @@
+<app-page-header [title]="'Event List'"></app-page-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary ">Paavai Foundation - Event List</h1>
+  </div>
+
+
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex">
+    <div *ngFor="let event of events; let i = index">
+      <ion-col size="12" size-md="6">
+        <ion-card [routerLink]="event.url" class="ion-justify-content-start ion-align-items-center card-nav">
+          <ion-card-content>
+            <ion-img src="{{event.imgUrl}}" class="card-icon ion-margin-top"></ion-img>
+          </ion-card-content>
+          <ion-card-title>{{event.title}}</ion-card-title>
+        </ion-card>
+      </ion-col>
+    </div>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Information</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Staff Name</ion-label>
+      <ion-input placeholder="Enter Staff Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Staff Address</ion-label>
+      <ion-textarea placeholder="Enter Address"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input type="Number" placeholder="Enter Phone Number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input placeholder="Enter Email Id"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Gender</ion-label>
+      <ion-input placeholder="Enter Gender"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Designation</ion-label>
+      <ion-input type="text" placeholder="Enter Designation"></ion-input>
+    </ion-item>
+   
+
+    <ion-item>
+      <ion-label position="stacked">Home Location</ion-label>
+      <ion-input type="text" placeholder="Enter Home Location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">age</ion-label>
+      <ion-input type="number" placeholder="Enter age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Join Date</ion-label>
+      <ion-input type="date" placeholder="Enter Join Date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Releving Date</ion-label>
+      <ion-input type="date" placeholder="Enter Releving Date"></ion-input>
+    </ion-item>
+
+   
+
+   
+
+    
+
+    <ion-item>
+      <ion-label position="stacked">Aadhar Number</ion-label>
+      <ion-input type="text" placeholder="Enter Aadhar No"></ion-input>
+    </ion-item>
+
+   
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="save()">Save</ion-button>
+</ion-content>

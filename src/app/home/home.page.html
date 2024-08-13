@@ -1,20 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-split-pane contentId="main">
+  <ion-menu #menuId [ngClass]="{'side-menu' : largeScreen}" contentId="main">
+    <ion-content>
+      <app-side-menu (closeMenu)="menuId.close()"></app-side-menu>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main">
+    <ion-router-outlet></ion-router-outlet>
   </div>
-</ion-content>
+</ion-split-pane>

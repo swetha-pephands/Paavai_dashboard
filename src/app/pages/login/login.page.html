@@ -1,0 +1,69 @@
+<ion-content class="ion-padding">
+  <div class="outer-container">
+    <div class="ja-center">
+      <div class="logo-image">
+        <img src="../../../assets/images/paavai logo.png" alt="Paavai Logo" />
+      </div>
+    </div>
+
+    <div class="ja-center">
+      <div class="login-box ion-padding">
+        <div class="heading">Welcome!</div>
+        
+        <!-- Login Form -->
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+          
+          <!-- Mobile Number Input -->
+          <div class="input-box ion-margin-top">
+            <ion-item class="ion-item">
+              <ion-input
+                type="tel"
+                placeholder="Enter mobile number"
+                [(ngModel)]="mobileNumber"
+                name="mobileNumber"
+                required
+                pattern="[0-9]*"
+                maxlength="10"
+                #mobileNumberInput="ngModel"
+              ></ion-input>
+            </ion-item>
+            <ion-text color="danger" *ngIf="mobileNumberInput.invalid && (mobileNumberInput.dirty || mobileNumberInput.touched)">
+              <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+              Please enter a valid mobile number.
+            </ion-text>
+          </div>
+          
+          <!-- Password Input -->
+          <div class="input-box ion-margin-top">
+            <ion-item class="ion-item">
+              <ion-input
+                [type]="showPassword ? 'text' : 'password'"
+                placeholder="Enter password"
+                [(ngModel)]="password"
+                name="password"
+                required
+                #passwordInput="ngModel"
+              ></ion-input>
+              <ion-icon
+                slot="end"
+                [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+                (click)="togglePasswordVisibility()"
+                [color]="showPassword ? 'primary' : 'medium'"
+                class="password-toggle-icon"
+              ></ion-icon>
+            </ion-item>
+            <ion-text color="danger" *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+              <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+              Please enter your password.
+            </ion-text>
+          </div>
+          
+          <!-- Login Button -->
+          <div class="ion-padding-top ion-text-center">
+            <ion-button type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

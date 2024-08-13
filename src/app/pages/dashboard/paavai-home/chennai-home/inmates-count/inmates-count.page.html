@@ -1,0 +1,29 @@
+<app-page-header [title]="'Inmates Count'"></app-page-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary">Paavai Foundation - Inmates Count</h1>
+  </div>
+
+  <!-- Floating Action Button (FAB) for opening modal -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center d-flex">
+    <div *ngFor="let count of counts">
+      <ion-col size="12" size-md="6">
+        <ion-card class="ion-justify-content-start ion-align-items-center card-nav" [routerLink]="count.url">
+          <ion-card-content>
+            <ion-img [src]="count.imgUrl"></ion-img>
+          </ion-card-content>
+          <ion-card-title>{{ count.title }}</ion-card-title>
+        </ion-card>
+      </ion-col>
+    </div>
+  </ion-row>
+</ion-content>

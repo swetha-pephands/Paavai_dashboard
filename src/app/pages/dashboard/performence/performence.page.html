@@ -1,0 +1,45 @@
+<app-page-header [title]="'Performance'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center">
+    <h1 class="primary">Performance</h1>
+  </div>
+  
+  <!-- Programs Buttons to switch between data sets -->
+  <div class="button-group">
+    <ion-button (click)="updateProgramsChart('district')">Districts</ion-button>
+    <ion-button (click)="updateProgramsChart('coordinator')">Coordinators</ion-button>
+    <ion-button (click)="updateProgramsChart('category')">Category</ion-button>
+    <ion-button (click)="updateProgramsChart('indicator')">Indicators</ion-button>
+  </div>
+  
+  <ion-card>
+    <ion-card-header>
+      <div class="graph-header">
+        <h2 class="graph-title">Programs</h2>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #programsCanvas style="position: relative; height: 200px; width: 100%;"></canvas>
+    </ion-card-content>
+  </ion-card>
+  
+  <!-- Events Buttons to switch between data sets -->
+  <div class="button-group">
+    <ion-button (click)="updateEventsChart('district')">Districts</ion-button>
+    <ion-button (click)="updateEventsChart('coordinator')">Coordinators</ion-button>
+    <ion-button (click)="updateEventsChart('category')">Category</ion-button>
+    <ion-button (click)="updateEventsChart('indicator')">Indicators</ion-button>
+  </div>
+  
+  <ion-card>
+    <ion-card-header>
+      <div class="graph-header">
+        <h2 class="graph-title">Events</h2>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #eventsCanvas style="position: relative; height: 200px; width: 100%;"></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

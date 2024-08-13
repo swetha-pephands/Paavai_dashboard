@@ -1,0 +1,40 @@
+ion-content {
+    --background: #fdf6e7;
+    /* Set the background color to purple */
+  }
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin: 10px; /* Margin around the button group */
+   
+  }
+  
+  .button-group ion-button {
+    flex: 1; /* Allows buttons to expand and fill available space */
+    max-width: 200px; /* Limits button width for larger screens */
+    margin: 5px; /* Margin around each button */
+    color: white;
+  }
+  ion-card {
+    width: 90%; /* Adjust width as needed */
+    max-width: 500px; /* Set a maximum width */
+    margin: 10px auto; /* Center the card and add margin */
+  }
+  
+  /* For card content, if needed */
+  ion-card-content {
+    padding: 10px; /* Adjust padding to reduce content space */
+  }
+  
+  
+  
+  @media (max-width: 600px) {
+    .button-group ion-button {
+      flex: 1 1 100%; /* Stacks buttons vertically on smaller screens */
+      max-width: none; /* Remove max-width constraint */
+    }
+  }
+  
