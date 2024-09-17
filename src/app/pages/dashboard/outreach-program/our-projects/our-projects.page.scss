@@ -50,7 +50,15 @@
     background-color: #ccc;
     margin: 10px 0;
   }
-  
+  .download-icon {
+    position: fixed;
+    top: 80px;  /* Adjust this value as needed */
+    right: 10px; /* Adjust this value as needed */
+    font-size: 36px; /* Adjust the size of the icon */
+    color:#9e2065; /* Change the color as needed */
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+  }
   @media (max-width: 767px) {
     .date-card {
       width: 90%;

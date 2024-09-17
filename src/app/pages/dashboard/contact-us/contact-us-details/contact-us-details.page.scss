@@ -1,0 +1,28 @@
+ion-content {
+    --background: #fdf6e7; /* Set the background color for ion-content */
+  }
+  
+  .status-card {
+    position: relative;
+  }
+  
+  .status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .status-badge.complete {
+    background-color: green; /* Green for complete */
+  }
+  
+  .status-badge.incomplete {
+    background-color: red; /* Red for incomplete */
+  }
+  
+  

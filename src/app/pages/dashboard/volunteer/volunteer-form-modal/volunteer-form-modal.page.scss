@@ -1,3 +1,14 @@
 .ion-color-primary{
     --ion-color-contrast: #fff !important;
 }
+/* volunteer-form-modal.page.scss */
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10; /* Ensure it is above other content */
+  }
+  .header {
+    position: relative; /* Needed to position the close button relative to the header */
+  }
+  

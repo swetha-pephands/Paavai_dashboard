@@ -12,11 +12,11 @@
   </ion-fab>
 
   <ion-grid>
-    <ion-row>
+    <ion-row >
       <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of paginatedData">
         <ion-card [routerLink]="item.url">
           <ion-grid>
-            <ion-row>
+            <ion-row class="ion-align-items-center ion-justify-content-center ">
               <ion-col size="4">
                 <img [src]="item.src" [alt]="item.name" class="card-image"/>
               </ion-col>

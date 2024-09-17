@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OurProjectsFormPage } from './our-projects-form/our-projects-form.page';
+import { ModalController } from '@ionic/angular';
 
 interface DropdownOption {
   placeholder: string;
@@ -66,7 +68,7 @@ export class OurProjectsPage implements OnInit {
   lastSelectedDropdown: string = '';
   lastSelectedOption: string = '';
 
-  constructor() {}
+  constructor(private modalController: ModalController) {}
 
   ngOnInit() {
     this.allImages = this.getAllImages(); // Initialize with all images
@@ -163,4 +165,14 @@ export class OurProjectsPage implements OnInit {
     this.showCustomDateRange = false;
     this.images = [...this.allImages]; // Refresh images to show all
   }
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: OurProjectsFormPage, // Modal component to be opened
+      componentProps: {
+        // Optionally pass data to the modal component
+      }
+    });
+    return await modal.present(); // Present the modal
+  }
+
 }

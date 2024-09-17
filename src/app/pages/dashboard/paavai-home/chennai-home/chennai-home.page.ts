@@ -35,6 +35,14 @@ export class ChennaiHomePage implements OnInit {
       btn: 'Details',
 
     },
+    {
+      title: 'News',  
+          imgUrl: '/assets/images/news.png',
+          discription:'"Empowering communities through outreach."',
+      url: './news',
+      btn: 'Details',
+
+    },
   ];
   constructor() { }
 

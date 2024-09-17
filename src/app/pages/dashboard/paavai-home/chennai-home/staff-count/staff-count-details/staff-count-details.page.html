@@ -1,4 +1,4 @@
-<app-page-header [title]="'Inmates Count Details'"></app-page-header>
+<app-page-header [title]="'Staff Count Details'"></app-page-header>
 
 
 
@@ -6,7 +6,8 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-content>
-      <ion-img src="../../../../../../../assets/images/staff.jpg"></ion-img>
+      <div class="text-center">
+      <ion-img src="../../../../../../../assets/images/staff.jpg" class="ion-img-centered"></ion-img>
 
       <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
         <ion-col size="12" size-md="6" size-lg="8" *ngFor="let page of detail_counts">
@@ -18,6 +19,7 @@
           </ion-item>
         </ion-col>
       </ion-row>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

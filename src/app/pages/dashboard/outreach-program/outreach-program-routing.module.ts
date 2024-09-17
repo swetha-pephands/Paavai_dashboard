@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'our-events',
     loadChildren: () => import('./our-events/our-events.module').then( m => m.OurEventsPageModule)
+  },
+  {
+    path: 'indicators',
+    loadChildren: () => import('./indicators/indicators.module').then( m => m.IndicatorsPageModule)
   }
 ];
 

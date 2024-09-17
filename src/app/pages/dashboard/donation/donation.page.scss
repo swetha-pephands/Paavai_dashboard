@@ -55,6 +55,22 @@ ion-col {
 ion-content {
   --background: #fdf6e7;
 }
+.filter-container {
+  margin: 16px;
+}
+
+.filter-container ion-item {
+  margin: 4px 0;
+}
+
+.reset-button {
+  margin-top: 16px;
+}
+
+.ion-text-right {
+  text-align: right;
+}
+
 
   
   @media (max-width: 767px) {

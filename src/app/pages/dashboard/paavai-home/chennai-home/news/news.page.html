@@ -1,0 +1,26 @@
+<app-page-header [title]="'News'"></app-page-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary ">Paavai Foundation - News</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let item of paginatedData">
+        <ion-img [src]="item.imgUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="pagination-toolbar ion-justify-content-center ion-align-items-center">
+    <ion-col size="auto">
+      <ion-button *ngFor="let pageNumber of paginationRange"
+                  (click)="setPage(pageNumber)"
+                  [color]="pageNumber === currentPage ? 'primary' : 'medium'"
+                  class="pagination-button">
+        {{ pageNumber }}
+      </ion-button>
+    </ion-col>
+  </ion-row> 
+  
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-content [fullscreen]="true">
+  <div class="header ja-center ion-text-center">
+    <h1 class="primary">Contact Us</h1>
+    <!-- Close Button -->
+    <ion-button fill="clear" class="close-button" (click)="closeForm()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+    
+  </div>
+
+  <ion-grid>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+        &nbsp; Name is required
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input formControlName="phone" type="tel" maxlength="10" (ionInput)="validatePhone($event)"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched">
+        &nbsp; Phone number is required
+      </ion-text>
+      <ion-text color="danger" *ngIf="form.get('phone')?.hasError('pattern') && form.get('phone')?.touched">
+        &nbsp; Please enter a valid phone number
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Subject</ion-label>
+        <ion-input formControlName="subject" type="text"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('subject')?.hasError('required') && form.get('subject')?.touched">
+        &nbsp; Subject is required
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+        &nbsp; Email is required
+      </ion-text>
+      <ion-text color="danger" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+        &nbsp; Please enter a valid email
+      </ion-text>
+
+      <!-- Message Field -->
+      <ion-item>
+        <ion-label position="floating">Message</ion-label>
+        <ion-textarea formControlName="message" rows="6"></ion-textarea>
+      </ion-item>
+      <ion-text color="danger" *ngIf="form.get('message')?.hasError('required') && form.get('message')?.touched">
+        &nbsp; Message is required
+      </ion-text>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" type="submit" [disabled]="form.invalid">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

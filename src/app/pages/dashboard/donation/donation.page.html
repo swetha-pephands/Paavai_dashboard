@@ -4,6 +4,59 @@
   <div class="header ja-center">
     <h1 class="primary">Donation</h1>
   </div>
+
+  <!-- Filters and Reset Button -->
+  <div class="filter-container">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <!-- Status Dropdown -->
+        <ion-col size="12" size-md="4">
+          <ion-item>
+            <ion-label>Status</ion-label>
+            <ion-select [(ngModel)]="selectedStatus" (ionChange)="filterData()">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="Completed">Success</ion-select-option>
+              <ion-select-option value="Incomplete">Failure</ion-select-option>
+              <ion-select-option value="Initiated">Initiated</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Date Dropdown -->
+        <ion-col size="12" size-md="4">
+          <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-select [(ngModel)]="selectedDate" (ionChange)="filterData()">
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="Today">Today</ion-select-option>
+              <ion-select-option value="Last Week">Last Week</ion-select-option>
+              <ion-select-option value="Last Month">Last Month</ion-select-option>
+              <ion-select-option value="Custom">Custom</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <!-- Custom Date Range -->
+        <ion-col size="12" size-md="4" *ngIf="selectedDate === 'Custom'">
+          <ion-item>
+            <ion-label>Start Date</ion-label>
+            <ion-datetime [(ngModel)]="startDate" (ionChange)="filterData()" displayFormat="MMM DD, YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>End Date</ion-label>
+            <ion-datetime [(ngModel)]="endDate" (ionChange)="filterData()" displayFormat="MMM DD, YYYY"></ion-datetime>
+          </ion-item>
+        </ion-col>
+
+        <!-- Reset Button -->
+        <ion-col size="12" size-md="4" class="ion-text-right">
+          <ion-button (click)="resetFilters()" color="light" class="reset-button">Reset</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Table -->
   <div class="table-container">
     <ion-grid>
       <!-- Table Header -->

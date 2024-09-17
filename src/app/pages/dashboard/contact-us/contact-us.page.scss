@@ -1,6 +1,104 @@
-ion-text {
-    margin-left: 8px; /* Adjust the value as needed */
-  }
-  ion-button{
-    color: white;
-  }
+ion-content {
+  --background: #fdf6e7;
+  /* Set the background color to purple */
+}
+
+
+// ion-card {
+//     margin: 10px;
+//     overflow: hidden;
+//     border-radius: 10px;
+//   }
+  
+//   .card-image {
+//     width: 100%;
+//     height: auto;
+//     border-radius: 8px;
+//   }
+  
+//   ion-card-content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//   }
+  
+//   ion-card-title {
+//     font-size: 1.2em;
+//     margin-bottom: 0.5em;
+//   }
+  
+//   ion-card-subtitle {
+//     color: #888;
+//   }
+  
+//   ion-footer {
+//     padding: 10px;
+//     text-align: center;
+//   }
+  
+//   ion-toolbar {
+//     --ion-background-color: #fff;
+//   }
+  
+//   ion-button {
+//     margin: 0 5px;
+//   }
+  
+//   ion-card:hover{
+//     cursor: pointer;
+//   }
+//   ion-icon{
+//     color: white;
+//   }
+
+.call-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.call-table th, .call-table td {
+  border: 1px solid #9e2065;
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.call-table th {
+  background-color:  #9e2065;
+  font-weight: bold;
+  color: white;
+}
+
+.status-complete {
+  color: green;
+  font-weight: bold;
+}
+
+.status-incomplete {
+  color: red;
+  font-weight: bold;
+}
+
+
+.call-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-primary {
+  background-color: #954678d0;
+  border-color:#954678d0;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color:#954678d0;
+}
+
+.btn-view {
+  float: right;
+  margin-left: 10px;
+}

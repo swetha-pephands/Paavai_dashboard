@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: OurEventsPage
+  },
+  {
+    path: 'our-event-forms',
+    loadChildren: () => import('./our-event-forms/our-event-forms.module').then( m => m.OurEventFormsPageModule)
   }
 ];
 

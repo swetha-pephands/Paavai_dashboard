@@ -22,10 +22,16 @@ public detail_counts = [
     { title: 'Education Name:', answer: 'Bsc', url: './inmates-count', icon: 'book-outline' },
     { title: 'Institution Name:', answer: 'SRM Univesity', url: '/home/dashboard', icon: 'business-outline' },
     { title: 'Intreast :', answer: 'Books Reading', url: '/home/dashboard', icon: 'heart-circle-outline' },
-    { title: 'Achivement:', answer: 'Gold Medalist', url: '/home/dashboard', icon: 'trophy-outline' },
+    { title: 'Achivement (Education):', answer: 'Gold Medalist', url: '/home/dashboard', icon: 'trophy-outline' },
+    { title: 'Achivement (Others):', answer: 'sports', url: '/home/dashboard', icon: 'trophy-outline' },
 
   ];
-
+  marksheet = {
+    title: 'Marksheet',
+    answer: '/assets/images/marksheet.webp',
+    url: '/home/dashboard',
+   
+  };
   constructor() { }
 
   ngOnInit() {

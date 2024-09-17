@@ -17,4 +17,12 @@ ion-content {
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Add bottom margin for spacing */
   }
+  .text-center {
+    text-align: center;
+  }
   
+  .ion-img-centered {
+    display: inline-block;
+    max-width: 30%;
+    height: auto;
+  }

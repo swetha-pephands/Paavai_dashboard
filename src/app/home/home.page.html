@@ -1,5 +1,5 @@
 <ion-split-pane contentId="main">
-  <ion-menu #menuId [ngClass]="{'side-menu' : largeScreen}" contentId="main">
+  <ion-menu #menuId class="side-menu" contentId="main">
     <ion-content>
       <app-side-menu (closeMenu)="menuId.close()"></app-side-menu>
     </ion-content>

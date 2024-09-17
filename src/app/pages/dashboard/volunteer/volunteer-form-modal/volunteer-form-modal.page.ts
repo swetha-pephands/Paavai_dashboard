@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -7,20 +8,44 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./volunteer-form-modal.page.scss'],
 })
 export class VolunteerFormModalPage implements OnInit {
+  form!: FormGroup;
 
-  constructor(private modalController: ModalController) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private modalCtrl: ModalController // Use ModalController instead of NavController
+  ) {}
 
-  closeModal() {
-    this.modalController.dismiss(); // Dismiss the modal
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      phone: [
+        '', 
+        [Validators.required, Validators.pattern('^[0-9]{10}$')]
+      ],
+      subject: ['', Validators.required],
+      email: [
+        '', 
+        [Validators.required, Validators.email]
+      ],
+      message: ['', Validators.required],
+    });
+  }
+  closeForm() {
+    this.modalCtrl.dismiss(); // Dismisses the modal
   }
 
-  save() {
-    // Implement save logic here, e.g., save form data to database or perform any action
-    console.log('Save button clicked');
-    this.closeModal(); // Example: Close modal after saving
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+      // Handle form submission
+    }
   }
-ngOnInit(): void {
-  
+
+  validatePhone(event: any) {
+    const input = event.target.value;
+    if (input && input.length > 10) {
+      this.form.controls['phone'].setValue(input.slice(0, 10));
+    }
+  }
 }
 
-}

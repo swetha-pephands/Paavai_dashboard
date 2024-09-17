@@ -41,15 +41,15 @@ export class DashboardPage implements OnInit {
 
       url: '/document-verification',
     },
-    {
-      title: 'Marksheet',
-      imgUrl: '/assets/images/marksheet.png',
-      discription:'"Showcase your academic achievements."      ',
+    // {
+    //   title: 'Marksheet',
+    //   imgUrl: '/assets/images/marksheet.png',
+    //   discription:'"Showcase your academic achievements."      ',
 
-      url: './marksheet',
-    },
+    //   url: './marksheet',
+    // },
     {
-      title: 'Contact Us',
+      title: 'Enquiries',
       imgUrl: '/assets/images/contact us.png',
       discription:'"Reach out to us for any inquiries or support."      ',
 

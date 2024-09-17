@@ -18,7 +18,7 @@ export class StaffCountDetailsPage implements OnInit {
       { title: 'Designation:', answer: 'Teacher', icon: 'ribbon-outline' },
 
       { title: 'Join Date:', answer: '03/06/2017', icon: 'calendar-clear-outline' },
-      { title: 'Releving Date:', answer: '27/04/2022', icon: 'calendar-clear-outline' },
+      { title: 'Status:', answer: 'Active', icon: 'calendar-clear-outline' },
       { title: 'Aadhar Number:', answer: '0978 6543 3456', url: './inmates-count', icon: 'card-outline' },
 
   
