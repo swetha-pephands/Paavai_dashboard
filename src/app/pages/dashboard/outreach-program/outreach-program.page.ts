@@ -22,12 +22,7 @@ export class OutreachProgramPage implements OnInit {
       url: './our-projects',
      
     },
-    {
-      title: ' Indicators',
-      imgUrl: '/assets/images/indicators.png',
-      url: './indicators',
-     
-    },
+    
   ];
   constructor() { }
 

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { UserProfilePageRoutingModule } from './user-profile-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserProfilePage } from './user-profile.page';
 import { SharedModule } from 'src/app/shared.module';
 @NgModule({
@@ -14,7 +14,8 @@ import { SharedModule } from 'src/app/shared.module';
     FormsModule,
     IonicModule,
     UserProfilePageRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   declarations: [UserProfilePage]
 })

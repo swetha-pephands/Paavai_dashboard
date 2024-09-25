@@ -1,35 +1,46 @@
 <app-page-header [title]="'Inmates Count Details'"></app-page-header>
 
-
-
-
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-content>
       <div class="text-center">
-      <ion-img src="../../../../../../../assets/images/girl-profile.jpg" class="ion-img-centered"></ion-img>
+        <ion-img src="../../../../../../../assets/images/girl-profile.jpg" class="ion-img-centered"></ion-img>
 
-      <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
-        <ion-col size="12" size-md="6" size-lg="8" *ngFor="let page of detail_counts">
-          <ion-item>
-            <ion-icon slot="start" [name]="page.icon" color="primary"></ion-icon>
-            <ion-label>
-              <h3><b>{{ page.title }}</b> &nbsp; {{ page.answer }}</h3>
-            </ion-label>
-          </ion-item>
-          
-        </ion-col>
-      </ion-row>
-      <div>
-        <h3><b>{{ marksheet.title }}</b></h3>
-        
-        <!-- Display Image in the answer field -->
-        <img [src]="marksheet.answer" alt="Marksheet Image" />
-      
+        <ion-row class="ion-justify-content-center ion-align-items-center d-flex space">
+          <ion-col size="12" size-md="6" size-lg="8" *ngFor="let page of detail_counts">
+            <ion-item>
+              <ion-icon slot="start" [name]="page.icon" color="primary"></ion-icon>
+              <ion-label>
+                <h3><b>{{ page.title }}</b> &nbsp; {{ page.answer }}</h3>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <div>
+          <h3><b>Achievements</b></h3>
+          <div *ngFor="let achievement of achievements; let i = index">
+            <ion-item>
+              <ion-label>
+                <h3><b>{{ achievement.title }}</b> &nbsp; {{ achievement.answer }}</h3>
+              </ion-label>
+
+              <!-- Image Upload for Achievement -->
+              <input type="file" (change)="onAchievementImageSelected($event, i)" />
+              
+              <!-- Display uploaded achievement image if available -->
+              <img *ngIf="achievement.image" [src]="achievement.image" alt="Achievement Image" />
+            </ion-item>
+          </div>
+        </div>
+        <div>
+          <h3><b>{{ marksheet.title }}</b></h3>
+          <!-- Display Marksheet Image -->
+          <img [src]="marksheet.answer" alt="Marksheet Image" />
+        </div>
+
+        <!-- Achievements Section -->
        
       </div>
-      
-    </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

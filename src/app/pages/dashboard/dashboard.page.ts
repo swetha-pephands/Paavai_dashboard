@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
+  user: any;
 
   public cardIcons = [
    
@@ -34,13 +36,13 @@ export class DashboardPage implements OnInit {
       discription:'"Empowering minds through education."',
       url: './education-campagins',
     },
-    {
-      title: 'Achivement',
-      imgUrl: '/assets/images/achivement.webp',
-      discription:'"Reaching new heights of success."',
+    // {
+    //   title: 'Achivement',
+    //   imgUrl: '/assets/images/achivement.webp',
+    //   discription:'"Reaching new heights of success."',
 
-      url: '/document-verification',
-    },
+    //   url: '/document-verification',
+    // },
     // {
     //   title: 'Marksheet',
     //   imgUrl: '/assets/images/marksheet.png',
@@ -86,12 +88,11 @@ export class DashboardPage implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private userService: UserService) {}
 
   ngOnInit() {
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-      this.router.navigate(['/login']);
-    }
+    this.user = this.userService.getUser(); // Fetch user data
+
   }
 }
 

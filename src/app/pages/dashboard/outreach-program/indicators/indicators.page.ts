@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-indicators',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndicatorsPage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    
   }
-
 }

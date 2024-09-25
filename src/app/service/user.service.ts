@@ -4,20 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  private user: any = null;
+  private user: any = null; // Use null or a default object
 
   constructor() {}
 
-  setUser(user: any) {
-    this.user = user;
+  // Set user profile data
+  setUser(profile: any) {
+    this.user = profile;
+    // You might want to persist this data (e.g., localStorage) or sync it with a backend server
   }
 
+  // Get user profile data
   getUser() {
     return this.user;
   }
 
-  logout() {
+  // Clear user data (e.g., on logout)
+  clearUser() {
     this.user = null;
-    // Add any additional logout logic here
   }
 }

@@ -4,31 +4,62 @@
   <div class="header ja-center">
     <h1 class="primary">User Profile</h1>
   </div>
+
   <ion-content class="ion-padding">
-    <form (ngSubmit)="saveProfile()">
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+      
+      <!-- Profile Picture -->
+      <div class="profile-picture">
+        <img *ngIf="profileForm.value.image" [src]="profileForm.value.image" alt="Profile Image" class="profile-img">
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Upload Profile Picture</ion-label>
+        <input type="file" (change)="onImageSelected($event)">
+      </ion-item>
+
+      <!-- Name -->
       <ion-item>
         <ion-label position="floating">Name</ion-label>
-        <ion-input [(ngModel)]="profile.name" name="name" required></ion-input>
+        <ion-input formControlName="name"></ion-input>
       </ion-item>
-  
+      <ion-text color="danger" *ngIf="name?.invalid && name?.touched">
+        <p *ngIf="name?.errors?.['required']">Name is required.</p>
+      </ion-text>
+
+      <!-- Email -->
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="profile.email" name="email" required></ion-input>
+        <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
-  
+      <ion-text color="danger" *ngIf="email?.invalid && email?.touched">
+        <p *ngIf="email?.errors?.['required']">Email is required.</p>
+        <p *ngIf="email?.errors?.['email']">Invalid email format.</p>
+      </ion-text>
+
+      <!-- Phone -->
       <ion-item>
         <ion-label position="floating">Phone</ion-label>
-        <ion-input type="tel" [(ngModel)]="profile.phone" name="phone"></ion-input>
+        <ion-input type="tel" formControlName="phone"></ion-input>
       </ion-item>
-  
+      <ion-text color="danger" *ngIf="phone?.invalid && phone?.touched">
+        <p *ngIf="phone?.errors?.['required']">Phone number is required.</p>
+        <p *ngIf="phone?.errors?.['pattern']">Phone number must be exactly 10 digits.</p>
+      </ion-text>
+
+      <!-- Address -->
       <ion-item>
         <ion-label position="floating">Address</ion-label>
-        <ion-input [(ngModel)]="profile.address" name="address"></ion-input>
+        <ion-input formControlName="address"></ion-input>
       </ion-item>
-  
-      <ion-button expand="block" type="submit" color="primary" class="ion-margin-top">
+      <ion-text color="danger" *ngIf="address?.invalid && address?.touched">
+        <p *ngIf="address?.errors?.['required']">Address is required.</p>
+      </ion-text>
+
+      <!-- Save Button -->
+      <ion-button expand="block" type="submit" color="primary" class="ion-margin-top" [routerLink]="['./dashboard']">
         Save Profile
       </ion-button>
     </form>
   </ion-content>
-  </ion-content>
+</ion-content>

@@ -3,12 +3,25 @@
     <div class="logo-image">
       <img src="../../../assets/images/paavai logo.png" alt="Paavai Logo" />
     </div>
-  </div>
-  
 
+    <!-- User Profile Section -->
+    <div *ngIf="user">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img *ngIf="user.image" [src]="user.image" alt="Profile Image">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ user.name }}</h2>
+          <p>{{ user.email }}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+  <!-- Menu items -->
   <ion-list>
     <ion-item
-      *ngFor="let page of adminPages; let i = index"
+      *ngFor="let page of adminPages"
       routerDirection="root"
       (click)="navigate(page.url)"
       lines="none"
@@ -17,36 +30,34 @@
       (click)="closeMenuHandler()"
       class="menu-item"
     >
-      <ion-icon slot="start" [name]="page.icon" color=""></ion-icon>
+      <ion-icon slot="start" [name]="page.icon"></ion-icon>
       <ion-label>{{ page.title }}</ion-label>
     </ion-item>
   </ion-list>
 
   <ion-list>
-    <div>
-      <ion-item
-        routerDirection="root"
-        [routerLink]="['./user-profile']"
-        lines="none"
-        detail="false"
-        routerLinkActive="selected"
-        (click)="closeMenuHandler()"
-      >
-        <ion-icon slot="start" name="person" class="icon"></ion-icon>
-        <ion-label>My Profile</ion-label>
-      </ion-item>
-      
-      <ion-item
-        routerDirection="root"
-        (click)="logout()"
-        lines="none"
-        detail="false"
-        routerLinkActive="selected"
-        (click)="closeMenuHandler()"
-      >
-        <ion-icon slot="start" name="log-out" class="icon"></ion-icon>
-        <ion-label>Logout</ion-label>
-      </ion-item>
-    </div>
+    <ion-item
+      routerDirection="root"
+      [routerLink]="['/user-profile']"
+      lines="none"
+      detail="false"
+      routerLinkActive="selected"
+      (click)="closeMenuHandler()"
+    >
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label>My Profile</ion-label>
+    </ion-item>
+
+    <ion-item
+      routerDirection="root"
+      (click)="logout()"
+      lines="none"
+      detail="false"
+      routerLinkActive="selected"
+      (click)="closeMenuHandler()"
+    >
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      <ion-label>Logout</ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>

@@ -42,8 +42,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">age</ion-label>
-      <ion-input type="number" placeholder="Enter age"></ion-input>
+      <ion-label position="stacked">Age</ion-label>
+      <ion-input type="number" placeholder="Enter Age"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -67,16 +67,26 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Intrest</ion-label>
-      <ion-input type="text" placeholder="Enter Intrest"></ion-input>
+      <ion-label position="stacked">Interest</ion-label>
+      <ion-input type="text" placeholder="Enter Interest"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Achivement</ion-label>
-      <ion-input type="text" placeholder="Enter Achivement"></ion-input>
+      <ion-label position="stacked">Achievement (Education)</ion-label>
+      <ion-input type="text" placeholder="Enter Achievement (Education)"></ion-input>
+      <input type="file" (change)="onAchievementImageSelected($event, 'education')" accept="image/*">
+      <!-- Preview the uploaded image -->
+      <img *ngIf="achievementImages.education" [src]="achievementImages.education" alt="Achievement Education Image" width="100">
     </ion-item>
 
-   
+    <ion-item>
+      <ion-label position="stacked">Achievement (Others)</ion-label>
+      <ion-input type="text" placeholder="Enter Achievement (Others)"></ion-input>
+      <input type="file" (change)="onAchievementImageSelected($event, 'others')" accept="image/*">
+      <!-- Preview the uploaded image -->
+      <img *ngIf="achievementImages.others" [src]="achievementImages.others" alt="Achievement Others Image" width="100">
+    </ion-item>
+
   </ion-list>
 
   <ion-button expand="block" color="primary" (click)="save()">Save</ion-button>

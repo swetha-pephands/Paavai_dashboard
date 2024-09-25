@@ -1,10 +1,15 @@
-<ion-content [fullscreen]="true">
-  <div class="header ja-center ion-text-center">
-    <h1 class="primary">Upload Photo</h1>
-  </div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Upload Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-  
-  
+<ion-content>
   <ion-grid>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <!-- Photo Upload -->
@@ -16,17 +21,6 @@
         &nbsp; Photo is required
       </ion-text>
 
-      <!-- District Selection -->
-      <ion-item>
-        <ion-label position="floating">District</ion-label>
-        <ion-select formControlName="district">
-          <ion-select-option *ngFor="let district of districts" [value]="district">{{ district }}</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-text color="danger" *ngIf="form.get('district')?.hasError('required') && form.get('district')?.touched">
-        &nbsp; District is required
-      </ion-text>
-
       <!-- Date Selection -->
       <ion-item>
         <ion-label position="floating">Select Date</ion-label>
@@ -35,6 +29,57 @@
       <ion-text color="danger" *ngIf="form.get('date')?.hasError('required') && form.get('date')?.touched">
         &nbsp; Date is required
       </ion-text>
+
+      <!-- Indicator Selection with Sub Indicators -->
+      <ion-item>
+        <ion-label position="floating">Indicator</ion-label>
+        <ion-select formControlName="indicator" (ionChange)="onIndicatorChange($event)">
+          <ion-select-option *ngFor="let indicator of indicators" [value]="indicator">{{ indicator.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="selectedSubIndicators.length > 0">
+        <ion-label position="floating">Sub Indicators</ion-label>
+        <ion-select formControlName="subIndicator">
+          <ion-select-option *ngFor="let sub of selectedSubIndicators" [value]="sub">{{ sub }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Program Type -->
+      <ion-item>
+        <ion-label position="floating">Program Type</ion-label>
+        <ion-input formControlName="programType"></ion-input>
+      </ion-item>
+
+      <!-- Venue -->
+      <ion-item>
+        <ion-label position="floating">Venue</ion-label>
+        <ion-input formControlName="venue"></ion-input>
+      </ion-item>
+
+      <!-- District Selection -->
+      <ion-item>
+        <ion-label position="floating">District</ion-label>
+        <ion-select formControlName="district">
+          <ion-select-option *ngFor="let district of districts" [value]="district">{{ district }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Beneficiaries Count -->
+      <ion-item>
+        <ion-label position="floating">Beneficiaries Count</ion-label>
+        <ion-input type="number" formControlName="beneficiariesCount"></ion-input>
+      </ion-item>
+
+      <!-- Gender Selection -->
+      <ion-item>
+        <ion-label position="floating">Gender</ion-label>
+        <ion-select formControlName="gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
 
       <!-- Submit Button -->
       <ion-row>
